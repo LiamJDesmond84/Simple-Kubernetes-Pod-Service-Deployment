@@ -1,12 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
+  # NodePort "name"
   name: client-node-port
 spec:
+  # NodePort's purpose is to set up a communication layer between the outside world & the container running inside a Pod - mainly for development services
   type: NodePort
-  ports:
-    - port: 3050
-      targetPort: 3000
-      nodePort: 31515
   selector:
     component: web
+  ports:
+      # "port" that another pod or container inside of our application could use in order to get access to "client-pod"
+    - port: 3050
+      # "targetPort" should map to "Pod" containers containerPort for access to pod
+      targetPort: 3000
+      # "nodePort" browser port
+      nodePort: 31515
