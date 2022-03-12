@@ -10,10 +10,10 @@ spec:
   # container "name" - we can name it whatever we'd like - can also be used for networking
   - name: client
     image: stephengrider/multi-client
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
+    # resources:
+    #   limits:
+    #     memory: "128Mi"
+    #     cpu: "500m"
     ports:
     # container port to be exposed to the outside world??? - NodePort maybe????
       - containerPort: 3000
