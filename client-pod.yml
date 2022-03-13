@@ -9,7 +9,7 @@ spec:
   containers:
   # container "name" - we can name it whatever we'd like - can also be used for networking
   - name: client
-    image: stephengrider/multi-client
+    image: liamjdesmond84/complex-worker
     # resources:
     #   limits:
     #     memory: "128Mi"
