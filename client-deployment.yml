@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-development
+spec:
+  # of pods, they will be absolutely identical in nature
+  replicas: 1
+  selector:
+    matchLabels:
+      # component is looking for a matching pod with that label
+      component: web
+  template:
+    metadata:
+      labels:
+        # pod label
+        component: web
+    spec:
+      containers:
+        # container "name"
+        - name: client
+          image: stephengrider/multi-client
+          ports:
+            - containerPort: 3000
