@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client-development
+  name: client-deployment
 spec:
   # of pods, they will be absolutely identical in nature
   replicas: 1
@@ -20,4 +20,4 @@ spec:
         - name: client
           image: stephengrider/multi-client
           ports:
-            - containerPort: 3000
+            - containerPort: 9999
