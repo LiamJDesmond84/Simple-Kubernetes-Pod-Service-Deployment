@@ -4,7 +4,7 @@ metadata:
   name: client-deployment
 spec:
   # of pods, they will be absolutely identical in nature
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       # component is looking for a matching pod with that label
@@ -18,6 +18,6 @@ spec:
       containers:
         # container "name"
         - name: client
-          image: liamjdesmond84/complex-worker
+          image: stephengrider/multi-client
           ports:
-            - containerPort: 9999
+            - containerPort: 3000
